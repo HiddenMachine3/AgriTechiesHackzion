@@ -71,11 +71,14 @@ def main():
 
         col1.image(uploaded_file, caption="Uploaded Image.", width=300)
 
-        image_array1, count1, ripeness_classes1 = processor_faraway.process_image(uploaded_file)
+        # image_array1, count1, ripeness_classes1 = processor_faraway.process_image(uploaded_file)
         image_array2, count2, ripeness_classes2 = processor_nearby.process_image(uploaded_file)
+        
+        # TODO : remove this
+        count1 = 0
 
         # Run YOLOv5 detection on the uploaded image
-        image_array, count, ripeness_classes = image_array1, count1, ripeness_classes1 if count1 > count2 else image_array2, count2, ripeness_classes2
+        image_array, count, ripeness_classes = image_array2, count2, ripeness_classes2 # image_array1, count1, ripeness_classes1 if count1 > count2 else image_array2, count2, ripeness_classes2
         ripe_count = ripeness_classes.count("Ripe")
         unripe_count = ripeness_classes.count("Unripe")
         # Display the result
