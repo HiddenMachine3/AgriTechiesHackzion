@@ -1,0 +1,6 @@
+train: /content/drive/MyDrive/add256-main/data
+val: /content/drive/MyDrive/add256-main/data
+
+nc: 1
+
+class: ["apple"]
