@@ -10,7 +10,8 @@ from image_processor import AppleProcessor
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-processor = AppleProcessor()
+processor_faraway = AppleProcessor("yolov8m15.pt")
+processor_nearby = AppleProcessor("best.pt")
 
 def create_histogram(ripe_count, unripe_count):
     labels = ['Ripe', 'Unripe']
@@ -70,8 +71,11 @@ def main():
 
         col1.image(uploaded_file, caption="Uploaded Image.", width=300)
 
+        image_array1, count1, ripeness_classes1 = processor_faraway.process_image(uploaded_file)
+        image_array2, count2, ripeness_classes2 = processor_nearby.process_image(uploaded_file)
+
         # Run YOLOv5 detection on the uploaded image
-        image_array, count, ripeness_classes = processor.process_image(uploaded_file)
+        image_array, count, ripeness_classes = image_array1, count1, ripeness_classes1 if count1 > count2 else image_array2, count2, ripeness_classes2
         ripe_count = ripeness_classes.count("Ripe")
         unripe_count = ripeness_classes.count("Unripe")
         # Display the result

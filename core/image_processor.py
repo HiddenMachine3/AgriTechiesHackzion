@@ -6,9 +6,9 @@ from classifier import FruitClassifier
 
 
 class AppleProcessor:
-    def __init__(self) -> None:
+    def __init__(self,model_name) -> None:
         self.ripeness_classifier = FruitClassifier()
-        self.bounding_box_detector_model = YOLO("../data/weights/best.pt")
+        self.bounding_box_detector_model = YOLO("../data/weights/"+model_name)
 
     def process_image(self, uploaded_file):
         count = 0
