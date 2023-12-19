@@ -60,6 +60,6 @@ def download_tree_images(query,absolute_path):
     print(folder_path)
     get_images(query, folder_path)
 
-download_tree_images(query="complete apple tree images", folder_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
+download_tree_images(query="complete apple tree images", absolute_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
 
 driver.quit()
