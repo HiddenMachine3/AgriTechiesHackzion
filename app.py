@@ -11,7 +11,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 processor_faraway = AppleProcessor("yolov8m15.pt")
-processor_nearby = AppleProcessor("best.pt")
+processor_nearby = AppleProcessor("faraway.pt")
 
 def create_histogram(ripe_count, unripe_count):
     labels = ['Ripe', 'Unripe']
