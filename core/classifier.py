@@ -3,6 +3,8 @@ from tensorflow.keras.models import Model
 import numpy as np
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
+import os
+
 
 class FruitClassifier:
     def __init__(self):
@@ -19,7 +21,9 @@ class FruitClassifier:
 
 
         self.model = Model(inputs=base_model.input,  outputs=predictions)
-        self.model.load_weights(r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\weights\best.pt") #'../data/ripeness_classification/apple/weights/model_weights.h5')
+
+        absolute_path = os.path.abspath("data/ripeness_classification/apple/weights/model_weights.h5")
+        self.model.load_weights(absolute_path) #r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\weights\best.pt") #'../data/ripeness_classification/apple/weights/model_weights.h5')
 
     
     def predict(self, img_path:str=None, img=None):
