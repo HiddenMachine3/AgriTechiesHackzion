@@ -79,8 +79,25 @@ def main():
             image_array, caption="Processed Image with Bounding Boxes.", width=300
         )
         st.title(
-            f"The number of apples are {count}, number of ripe : {ripe_count}, number of unripe : {unripe_count} , classes are : {ripeness_classes}"
-        )
+            f"The number of apples are {count}")#\n number of ripe : {ripe_count}\n number of unripe : {unripe_count} "# classes are : {ripeness_classes}"
+        st.markdown(
+    f"""
+    <div style="color: white; font-size: 30px; font-weight: bold;">
+        Number of ripe apples are {ripe_count}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+        st.markdown(
+    f"""
+    <div style="color: white; font-size: 30px; font-weight: bold;">
+        Number of unripe apples are {unripe_count}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
         # st.pyplot(create_histogram(ripe_count, unripe_count))
         create_histogram(ripe_count, unripe_count)
