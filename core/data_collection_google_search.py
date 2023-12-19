@@ -59,8 +59,12 @@ def download_tree_images(query,absolute_path):
     print(folder_path)
     get_images(query, folder_path)
 
+<<<<<<< HEAD
 download_ripeness_classification_imgs(r"C:/Projects/AgriTechiesHackzion/data/ripeness_classification/apple/train")
 
 # download_tree_images(query="complete apple tree images", folder_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
+=======
+download_tree_images(query="complete apple tree images", absolute_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
+>>>>>>> e23cc6cb23e3a5c00caf7630d447f4dcc62b6cdf
 
 driver.quit()
