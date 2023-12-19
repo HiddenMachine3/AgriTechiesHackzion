@@ -15,7 +15,7 @@ class FruitClassifier:
         # let's add a fully-connected layer
         x = Dense(1024, activation='relu')(x)
         # and a logistic layer -- let's say we have 3 classes
-        predictions = Dense(3, activation='softmax')(x)  # Update the number of classes here
+        predictions = Dense(2, activation='softmax')(x)  # Update the number of classes here
 
 
         self.model = Model(inputs=base_model.input,  outputs=predictions)
