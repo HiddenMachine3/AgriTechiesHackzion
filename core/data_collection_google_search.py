@@ -32,23 +32,22 @@ def get_images(query: str, folder_path: str):
         image.screenshot(f'{folder_path}/{query.replace(" ","_")}_{count}.png')
         count += 1
 
+def download_ripeness_classification_imgs(TRAINING_DATA_PATH):
+    for query in [
+        "unripe apple",
+        "ripe apple",
+        "rotten apple"
+    ]:
+        #  i have a folder in my project directory. I have  to get the absolute path of this folder write me code to get the absolute path of this folder
+        absolute_path = TRAINING_DATA_PATH# os.path.abspath("data/object_detection")
+        folder_name = query.split(" ")[0]
+        folder_path = os.path.join(absolute_path, folder_name)
 
-for query in [
-    "unripe apple",
-    "ripe apple",
-    "rotten apple",
-    "apple tree"
-]:
-    #  i have a folder in my project directory. I have  to get the absolute path of this folder write me code to get the absolute path of this folder
-    absolute_path = TRAINING_DATA_PATH# os.path.abspath("data/object_detection")
-    folder_name = query.split(" ")[0]
-    folder_path = os.path.join(absolute_path, folder_name)
-
-    # if folder_path doesn't exist, create it
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-    print(folder_path)
-    get_images(query, folder_path)
+        # if folder_path doesn't exist, create it
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        print(folder_path)
+        get_images(query, folder_path)
 
 def download_tree_images(query,absolute_path):
     global driver
