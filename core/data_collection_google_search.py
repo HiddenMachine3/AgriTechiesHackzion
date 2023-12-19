@@ -7,7 +7,7 @@ import os
 # Initialize WebDriver
 driver = webdriver.Chrome()
 
-TRAINING_DATA_PATH = "C:/Projects/AgriTechiesHackzion/data/ripeness_classification/apple/train"
+# TRAINING_DATA_PATH = "C:/Projects/AgriTechiesHackzion/data/ripeness_classification/apple/train"
 def get_images(query: str, folder_path: str):
     global driver
     # Go to Google Images
@@ -50,5 +50,17 @@ for query in [
     print(folder_path)
     get_images(query, folder_path)
 
+def download_tree_images(query,absolute_path):
+    global driver
+    folder_name = query.split(" ")[0]
+    folder_path = os.path.join(absolute_path, folder_name)
+
+    # if folder_path doesn't exist, create it
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    print(folder_path)
+    get_images(query, folder_path)
+
+download_tree_images(query="complete apple tree images", folder_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
 
 driver.quit()
