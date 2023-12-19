@@ -7,7 +7,7 @@ import os
 # Initialize WebDriver
 driver = webdriver.Chrome()
 
-TRAINING_DATA_PATH = "C:\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\train"
+TRAINING_DATA_PATH = "C:/Projects/AgriTechiesHackzion/data/ripeness_classification/apple/train"
 def get_images(query: str, folder_path: str):
     global driver
     # Go to Google Images
