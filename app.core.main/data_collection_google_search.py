@@ -7,7 +7,7 @@ import os
 # Initialize WebDriver
 driver = webdriver.Chrome()
 
-
+TRAINING_DATA_PATH = "C:\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\train"
 def get_images(query: str, folder_path: str):
     global driver
     # Go to Google Images
@@ -39,7 +39,7 @@ for query in [
     "rotten apple",
 ]:
     #  i have a folder in my project directory. I have  to get the absolute path of this folder write me code to get the absolute path of this folder
-    absolute_path = os.path.abspath("data/object_detection")
+    absolute_path = TRAINING_DATA_PATH# os.path.abspath("data/object_detection")
     folder_name = query.split(" ")[0]
     folder_path = os.path.join(absolute_path, folder_name)
 
