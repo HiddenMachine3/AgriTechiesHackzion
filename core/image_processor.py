@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
-from classifier import FruitClassifier
+from core.classifier import FruitClassifier
 
 
 class AppleProcessor:
