@@ -26,7 +26,7 @@ def get_images(query: str, folder_path: str):
     # save the images
     count = 0
     for image in image_results:
-        if count == 100:
+        if count == 500:
             break
         # when i do drive.find_elements for an image search using selenium in google chrome, i want to get the url of each image. Write code to print all attributes present in each result
         image.screenshot(f'{folder_path}/{query.replace(" ","_")}_{count}.png')
@@ -37,6 +37,7 @@ for query in [
     "unripe apple",
     "ripe apple",
     "rotten apple",
+    "apple tree"
 ]:
     #  i have a folder in my project directory. I have  to get the absolute path of this folder write me code to get the absolute path of this folder
     absolute_path = TRAINING_DATA_PATH# os.path.abspath("data/object_detection")
