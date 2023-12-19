@@ -19,7 +19,7 @@ class FruitClassifier:
 
 
         self.model = Model(inputs=base_model.input,  outputs=predictions)
-        self.model.load_weights(r"C:\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\weights\model_weights.h5") #'../data/ripeness_classification/apple/weights/model_weights.h5')
+        self.model.load_weights(r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\weights\model_weights.h5") #'../data/ripeness_classification/apple/weights/model_weights.h5')
 
     
     def predict(self, img_path:str=None, img=None):
@@ -37,5 +37,5 @@ class FruitClassifier:
         predicted_labels = self.dataset_labels[predicted_ids]
         return predicted_labels[0]
 
-clf = FruitClassifier()
-print(clf.predict(r"C:\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\train\ripe\ripe_apple_11.png"))
+# clf = FruitClassifier()
+# print(clf.predict(r"C:\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\train\ripe\ripe_apple_11.png"))
