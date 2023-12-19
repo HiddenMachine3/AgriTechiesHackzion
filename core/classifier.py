@@ -6,7 +6,7 @@ from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 
 class FruitClassifier:
     def __init__(self):
-        self.dataset_labels = np.array(['Ripe', 'Rotten', 'Unripe'])
+        self.dataset_labels = np.array(['Ripe', 'Unripe'])
         # create the base pre-trained model
         base_model = MobileNetV2(weights='imagenet', include_top=False)
         # add a global spatial average pooling layer
