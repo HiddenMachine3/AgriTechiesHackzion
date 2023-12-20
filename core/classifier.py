@@ -21,13 +21,7 @@ class FruitClassifier:
 
 
         self.model = Model(inputs=base_model.input,  outputs=predictions)
-<<<<<<< HEAD
-        self.model.load_weights(r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\weights\model_weights.h5") #'../data/ripeness_classification/apple/weights/model_weights.h5')
-=======
-
-        absolute_path = os.path.abspath("data/ripeness_classification/apple/weights/model_weights.h5")
-        self.model.load_weights(absolute_path) #r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\weights\best.pt") #'../data/ripeness_classification/apple/weights/model_weights.h5')
->>>>>>> dd613642b00d207c58c049a660163dd8801c5f41
+        self.model.load_weights(os.path.abspath("data/ripeness_classification/apple/weights/model_weights.h5")) #r"C:\Users\25bak\Projects\AgriTechiesHackzion\data\ripeness_classification\apple\weights\model_weights.h5") #'../data/ripeness_classification/apple/weights/model_weights.h5')
 
     
     def predict(self, img_path:str=None, img=None):
