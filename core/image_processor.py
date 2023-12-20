@@ -26,7 +26,7 @@ class AppleProcessor:
         # Draw bounding boxes on the image
         for r in results:
             for box in r.boxes:
-                if float(box.conf) > 0.3:
+                if float(box.conf) > 0.40001:
                     cx, cy, w, h = map(float, box.xywh[0])
                     cx, cy, w, h = map(float, box.xywh[0])
                     x1 = cx - 0.5 * w
