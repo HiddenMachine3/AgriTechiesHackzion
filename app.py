@@ -100,7 +100,7 @@ def main():
             )  # \n number of ripe : {ripe_count}\n number of unripe : {unripe_count} "# classes are : {ripeness_classes}"
         st.markdown(
             f"""
-    <div style="color: black; font-size: 30px; font-weight: bold;">
+    <div style="color: white; font-size: 30px; font-weight: bold;">
         Number of ripe apples are {ripe_count}
     </div>
     """,
@@ -109,7 +109,7 @@ def main():
 
         st.markdown(
             f"""
-    <div style="color: black; font-size: 30px; font-weight: bold;">
+    <div style="color: white; font-size: 30px; font-weight: bold;">
         Number of unripe apples are {unripe_count}
     </div>
     """,
