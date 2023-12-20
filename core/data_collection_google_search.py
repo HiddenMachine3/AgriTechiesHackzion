@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 import os
+from selenium.webdriver.common.action_chains import ActionChains
+
 
 # Initialize WebDriver
 driver = webdriver.Chrome()
@@ -20,6 +22,11 @@ def get_images(query: str, folder_path: str):
 
     # Wait for the results to load
     driver.implicitly_wait(10)
+
+    # Scroll down to load more images
+    for _ in range(1):  # Adjust this value based on how many images you want to load
+        ActionChains(driver).send_keys(Keys.SPACE).perform()
+
     # Find the image results
     image_results = driver.find_elements(By.CSS_SELECTOR, ".rg_i")
 
@@ -59,12 +66,8 @@ def download_tree_images(query,absolute_path):
     print(folder_path)
     get_images(query, folder_path)
 
-<<<<<<< HEAD
 download_ripeness_classification_imgs(r"C:/Projects/AgriTechiesHackzion/data/ripeness_classification/apple/train")
 
 # download_tree_images(query="complete apple tree images", folder_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
-=======
-download_tree_images(query="complete apple tree images", absolute_path="C:/Users/25bak/Projects/AgriTechiesHackzion/data/object_detection/apple_trees_final")
->>>>>>> e23cc6cb23e3a5c00caf7630d447f4dcc62b6cdf
 
 driver.quit()

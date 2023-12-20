@@ -6,12 +6,17 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import Model
-from image_processor import AppleProcessor
+from core.image_processor import AppleProcessor
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
+<<<<<<< HEAD:core/app.py
 # processor_faraway = AppleProcessor("yolov8m15.pt")
 processor_nearby = AppleProcessor("best.pt")
+=======
+processor_faraway = AppleProcessor("yolov8m15.pt")
+processor_nearby = AppleProcessor("faraway.pt")
+>>>>>>> dd613642b00d207c58c049a660163dd8801c5f41:app.py
 
 def create_histogram(ripe_count, unripe_count):
     labels = ['Ripe', 'Unripe']
