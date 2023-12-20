@@ -6,9 +6,9 @@ from core.classifier import FruitClassifier
 
 
 class AppleProcessor:
-    def __init__(self,model_name) -> None:
+    def __init__(self, model_name) -> None:
         self.ripeness_classifier = FruitClassifier()
-        self.bounding_box_detector_model = YOLO("../data/weights/"+model_name)
+        self.bounding_box_detector_model = YOLO("../data/weights/" + model_name)
 
     def process_image(self, uploaded_file):
         count = 0
@@ -34,17 +34,6 @@ class AppleProcessor:
                     x2 = cx + 0.5 * w
                     y2 = cy + 0.5 * h
 
-                    cv2.rectangle(
-                        image_rgb, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 0), 5
-                    )
-                    cv2.rectangle(
-                        image_rgb,
-                        (int(x1) + 2, int(y1) + 2),
-                        (int(x2) - 2, int(y2) - 2),
-                        (255, 0, 0),
-                        3,
-                    )
-
                     # Crop the image
                     single_apple_image = image_rgb[int(y1) : int(y2), int(x1) : int(x2)]
                     print(type(single_apple_image))
@@ -52,6 +41,18 @@ class AppleProcessor:
                         img=single_apple_image
                     )
                     ripeness_classes.append(ripeness_class)
+
+                    cv2.rectangle(
+                        image_rgb, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 0), 10
+                    )
+
+                    cv2.rectangle(
+                        image_rgb,
+                        (int(x1) + 2, int(y1) + 2),
+                        (int(x2) - 2, int(y2) - 2),
+                        (255, 0, 0) if ripeness_class == "Unripe" else (0, 255, 0),
+                        7,
+                    )
 
                     count += 1
 
