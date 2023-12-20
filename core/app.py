@@ -10,7 +10,7 @@ from image_processor import AppleProcessor
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-processor_faraway = AppleProcessor("yolov8m15.pt")
+# processor_faraway = AppleProcessor("yolov8m15.pt")
 processor_nearby = AppleProcessor("best.pt")
 
 def create_histogram(ripe_count, unripe_count):
