@@ -41,8 +41,8 @@ def get_images(query: str, folder_path: str):
 
 def download_ripeness_classification_imgs(TRAINING_DATA_PATH):
     for query in [
-        "unripe apple",
-        "ripe apple"
+        "unripe single apple -green",
+        "ripe single apple"
     ]:
         #  i have a folder in my project directory. I have  to get the absolute path of this folder write me code to get the absolute path of this folder
         absolute_path = TRAINING_DATA_PATH# os.path.abspath("data/object_detection")
